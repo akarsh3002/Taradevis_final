@@ -1,0 +1,159 @@
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+ul.iti__country-list {
+  background-color: #14532d;
+}
+
+.wrapper {
+  max-width: 1200px;
+  position: relative;
+}
+
+.wrapper i {
+  top: 45%;
+  height: 46px;
+  width: 46px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  position: absolute;
+  text-align: center;
+  line-height: 46px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.wrapper i:first-child {
+  left: -23px;
+  display: none;
+}
+
+.wrapper i:last-child {
+  right: -23px;
+}
+
+.wrapper .carousel {
+  font-size: 0px;
+  display: flex;
+  padding: 0 35px;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+}
+
+.carousel.dragging {
+  cursor: grab;
+  scroll-behavior: auto;
+}
+.carousel.dragging img {
+  pointer-events: none;
+}
+
+.carousel img {
+  height: 340px;
+  object-fit: cover;
+  margin-left: 14px;
+  width: calc(100% / 3);
+}
+.carousel img:first-child {
+  margin-left: 0px;
+}
+
+@media screen and (max-width: 900px) {
+  .carousel img {
+    width: calc(100% / 2);
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .carousel img {
+    width: 100%;
+  }
+}
+
+.gallery-cell {
+  height: 340px;
+  width: calc(100% / 3);
+  background: rgb(63, 63, 63);
+  counter-increment: gallery-cell;
+}
+
+/* cell number */
+.gallery-cell:before {
+  display: block;
+  text-align: center;
+  content: counter(gallery-cell);
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
+}
+
+.gallery-cell1 {
+  height: 300px;
+
+  margin-left: 28px;
+  width: 300px;
+  background: rgb(63, 63, 63);
+}
+.gallery-cell1:before {
+  display: block;
+  text-align: center;
+}
+
+.gallery-cell2 {
+  height: 300px;
+  margin-left: 12px;
+  margin-right: 8px;
+  width: 100%;
+}
+.gallery-cell2:before {
+  display: block;
+  text-align: center;
+}
+.gallery-cell3 {
+  height: 300px;
+  margin-right: 20px;
+  width: calc(100% / 5);
+  counter-increment: gallery-cell;
+  flex: content;
+  justify-content: center;
+}
+.gallery-cell3:before {
+  display: block;
+  text-align: center;
+}
+
+.gallery-cell4 {
+  height: 110px;
+  margin-left: 10px;
+}
+
+@media screen and (max-width: 900px) {
+  .gallery-cell {
+    width: calc(100% / 2);
+  }
+  .gallery-cell1 {
+    width: calc(100% / 2);
+  }
+  .gallery-cell3 {
+    width: calc(100% / 10);
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .gallery-cell {
+    width: calc(100%);
+  }
+  .gallery-cell1 {
+    width: calc(100%);
+  }
+  .gallery-cell3 {
+    width: calc(100% / 4);
+    height: 150px;
+  }
+}

@@ -1,0 +1,53 @@
+html {
+  scrollbar-gutter: stable;
+}
+
+.modal:has(button[type="submit"][data-loading="true"]) {
+  pointer-events: none;
+}
+
+.modal {
+  --modal-transition-duration: 0.3s;
+
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+  display: grid;
+  align-items: center;
+  z-index: 1000;
+  pointer-events: none;
+
+  opacity: 0;
+  transition: opacity var(--modal-transition-duration) ease-in-out;
+
+  &.visible {
+    opacity: 1;
+    pointer-events: auto;
+
+    .modal-content {
+      scale: 1;
+      transition-delay: inherit;
+    }
+  }
+
+  .modal-content {
+    --content-padding: 1rem;
+
+    position: relative;
+    width: calc(100% - 2 * var(--content-padding));
+    max-width: 720px;
+    margin-inline: auto;
+
+    scale: 0.95;
+    transition: scale var(--modal-transition-duration) ease-in-out;
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-size: 1.5rem;
+    border: none;
+    cursor: pointer;
+  }
+}

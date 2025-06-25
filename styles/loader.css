@@ -1,0 +1,33 @@
+.loader {
+  --clr-fill: #16a34a;
+  --clr-stroke: #fff;
+
+  display: inline-block;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 100vw;
+  background-image: conic-gradient(
+    var(--clr-fill) 0deg 90deg,
+    var(--clr-stroke) 90deg
+  );
+
+  rotate: 0deg;
+  animation: move 1s linear infinite;
+}
+
+@keyframes move {
+  to {
+    rotate: 360deg;
+  }
+}
+
+.loader::before {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  border-radius: inherit;
+  background-color: var(--clr-fill);
+}
+
+/* <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-loader-circle-icon lucide-loader-circle"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg> */
