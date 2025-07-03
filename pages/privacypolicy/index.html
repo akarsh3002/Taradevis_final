@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tara Devi's Enclave</title>
-    <link rel="icon" href="../../Assets/favicon.ico" type="image/x-icon" />
+
+    <link rel="icon" href="/Assets/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/styles/modal-handler.css" />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
       rel="stylesheet"
@@ -42,15 +45,16 @@
     </style>
   </head>
   <body class="min-h-screen flex flex-col">
+    <!-- NAVBAR -->
     <nav
       class="bg-[#14532D] text-white p-4 md:px-8 md:py-3 flex justify-between items-center fixed w-full top-0 z-50 shadow-lg text-lg md:text-xl"
     >
       <!-- Logo and Title -->
       <div class="flex items-center space-x-3">
-        <img src="../../Assets/Logo.png" alt="Logo" class="h-8 md:h-8" />
-        <div onclick="redirecttoHome()" class="cursor-pointer">
+        <img src="/Assets/Logo.png" alt="Logo" class="h-8 md:h-8" />
+        <div class="cursor-pointer">
           <h1 class="font-medium text-base leading-tight">
-            Tara Devi’s Enclave
+            Tara Devi's Enclave
           </h1>
           <p class="text-sm md:text-sm opacity-50">Phase-1</p>
         </div>
@@ -60,7 +64,51 @@
       <div class="hidden lg:flex space-x-8 text-gray-400 font-normal text-base">
         <a href="/" class="nav-link">Home</a>
         <a href="/#aboutus" class="nav-link">About Us</a>
-        <a href="/residential" class="nav-link">Residential</a>
+
+        <div class="dropdown">
+          <button
+            id="bhk-list-trigger"
+            aria-controls="bhk-list"
+            aria-expanded="false"
+            data-dropdown-item="trigger"
+            class="dropdown-trigger"
+          >
+            <a href="/residential" class="nav-link">Residential</a>
+            <span class="dropdown-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </span>
+          </button>
+
+          <div
+            role="menu"
+            id="bhk-list"
+            aria-labelledby="bhk-list-trigger"
+            data-dropdown-item="content"
+            class="dropdown-content"
+          >
+            <ul class="dropdown-list">
+              <li>
+                <a href="/twobhk">2 BHK</a>
+              </li>
+              <li>
+                <a href="/threebhk">3 BHK</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
         <a href="/commercial" class="nav-link">Commercial</a>
         <a href="/amenities" class="nav-link">Amenities</a>
         <a href="/#contactus" class="nav-link">Contact Us</a>
@@ -318,9 +366,7 @@
     </div>
 
     <!--Footer-->
-    <footer
-      class="bg-[#001901] text-white text-center py-4 w-full"
-    >
+    <footer class="bg-[#001901] text-white text-center py-4 w-full">
       <!-- Social Links Section -->
       <div class="container mx-auto md:my-0 my-2">
         <div class="flex justify-center space-x-6 md:space-x-10">
@@ -390,6 +436,8 @@
         <span class="font-semibold underline">Apex Byte Innovations</span>
       </a>
     </footer>
+
+    <script type="module" src="/js/modal-handler.js"></script>
 
     <script>
       function redirectToHome() {

@@ -149,7 +149,7 @@
       >
         <!-- Logo and Title -->
         <div class="flex items-center space-x-3">
-          <img src="../../Assets/Logo.png" alt="Logo" class="h-8 md:h-8" />
+          <img src="/Assets/Logo.png" alt="Logo" class="h-8 md:h-8" />
           <div class="cursor-pointer">
             <h1 class="font-medium text-base leading-tight">
               Tara Devi's Enclave
@@ -164,7 +164,51 @@
         >
           <a href="/" class="nav-link">Home</a>
           <a href="/#aboutus" class="nav-link">About Us</a>
-          <a href="/residential" class="nav-link">Residential</a>
+
+          <div class="dropdown">
+            <button
+              id="bhk-list-trigger"
+              aria-controls="bhk-list"
+              aria-expanded="false"
+              data-dropdown-item="trigger"
+              class="dropdown-trigger"
+            >
+              <a href="/residential" class="nav-link">Residential</a>
+              <span class="dropdown-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </span>
+            </button>
+
+            <div
+              role="menu"
+              id="bhk-list"
+              aria-labelledby="bhk-list-trigger"
+              data-dropdown-item="content"
+              class="dropdown-content"
+            >
+              <ul class="dropdown-list">
+                <li>
+                  <a href="/twobhk">2 BHK</a>
+                </li>
+                <li>
+                  <a href="/threebhk">3 BHK</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
           <a href="/commercial" class="nav-link">Commercial</a>
           <a href="/amenities" class="nav-link">Amenities</a>
           <a href="/#contactus" class="nav-link">Contact Us</a>
@@ -184,16 +228,22 @@
       <!-- MOBILE MENU -->
       <div
         id="mobile-menu"
-        class="fixed inset-0 bg-[#001901] text-white p-6 z-40 flex flex-col space-y-6 transform translate-x-full transition-transform duration-300 lg:hidden"
+        class="fixed inset-0 bg-[#001901] text-white p-6 z-40 flex flex-col gap-4 pt-24 transform translate-x-full transition-transform duration-300 lg:hidden"
       >
         <!-- Close Button -->
-        <div class="flex justify-end">
+        <div class="absolute top-20 right-3 flex justify-end">
           <button id="menu-close" class="text-white text-3xl">✕</button>
         </div>
         <a href="/" class="mobile-link">Home</a>
         <a href="/#aboutus" class="mobile-link">About Us</a>
         <a href="/residential" class="mobile-link">Residential</a>
-        <a href="/commercial" class="mobile-link">Commercial</a>
+
+        <div class="pl-6 flex flex-col gap-2">
+          <a href="/twobhk" class="mobile-link">2 BHK</a>
+          <a href="/threebhk" class="mobile-link">3 BHK</a>
+        </div>
+
+        <a href="/commercial" class="mobile-link">Commercial</a>        
         <a href="/amenities" class="mobile-link">Amenities</a>
         <a href="/#contactus" class="mobile-link">Contact Us</a>
       </div>
