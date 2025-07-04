@@ -92,8 +92,6 @@ onload = () => {
 
 /************** Dropdown Menu **************/
 
-console.log("Hello, World!");
-
 const openDropdown = (trigger, itemList, focusFirstOnOpen = true) => {
   if (!trigger || !itemList.length) return;
 

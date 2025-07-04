@@ -634,7 +634,7 @@
           >
             <h3 class="text-2xl font-semibold">Get in Touch</h3>
             <p class="text-gray-300 text-sm mt-2">
-              We will get back to you in 24 hours
+              We will get back to you shortly
             </p>
 
             <form id="contactForm" class="mt-4 space-y-4">
@@ -877,7 +877,7 @@
         >
           <h3 class="text-2xl font-semibold">Get in Touch</h3>
           <p class="text-gray-300 text-sm mt-2">
-            We will get back to you in 24 hours
+            We will get back to you shortly
           </p>
 
           <form
@@ -958,7 +958,7 @@
 
     <!-- JavaScript -->
     <script>
-      document.querySelectorAll('input[type="tel"]').forEach(phoneNode => {
+      document.querySelectorAll('input[type="tel"]').forEach((phoneNode) => {
         const phoneInput = window.intlTelInput(phoneNode, {
           initialCountry: "in", // Set default to India
           preferredCountries: ["in", "us", "gb"], // Preferred options on top
@@ -973,7 +973,7 @@
       document.addEventListener("DOMContentLoaded", function () {
         const contactForm = document.getElementById("contactForm");
 
-        contactForm.addEventListener("submit", async e => {
+        contactForm.addEventListener("submit", async (e) => {
           e.preventDefault();
 
           const firstName = document.getElementById("firstName").value.trim();
@@ -1022,7 +1022,7 @@
 
         const downloadForm = document.getElementById("download-form");
 
-        downloadForm.addEventListener("submit", async e => {
+        downloadForm.addEventListener("submit", async (e) => {
           e.preventDefault();
 
           const countryCode = downloadForm
@@ -1092,13 +1092,15 @@
         const tabButtons = document.querySelectorAll(".tab-btn");
         const tabContents = document.querySelectorAll(".tab-content");
 
-        tabButtons.forEach(button => {
+        tabButtons.forEach((button) => {
           button.addEventListener("click", function () {
             const tabId = this.getAttribute("data-tab");
 
             // Remove active class from all buttons and content
-            tabButtons.forEach(btn => btn.classList.remove("tab-active"));
-            tabContents.forEach(content => content.classList.remove("active"));
+            tabButtons.forEach((btn) => btn.classList.remove("tab-active"));
+            tabContents.forEach((content) =>
+              content.classList.remove("active")
+            );
 
             // Add active class to current button and content
             this.classList.add("tab-active");
@@ -1216,8 +1218,8 @@
           threshold: 0.1,
         };
 
-        const observer = new IntersectionObserver(entries => {
-          entries.forEach(entry => {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
             if (entry.isIntersecting) {
               entry.target.classList.add("animated");
               observer.unobserve(entry.target);
@@ -1225,7 +1227,7 @@
           });
         }, observerOptions);
 
-        document.querySelectorAll(".fade-in, .slide-in").forEach(el => {
+        document.querySelectorAll(".fade-in, .slide-in").forEach((el) => {
           observer.observe(el);
         });
       });
@@ -1233,7 +1235,7 @@
       const currentPath = window.location.pathname.split("/").pop();
       const anchors = document.querySelectorAll(".nav-link");
 
-      anchors.forEach(a => {
+      anchors.forEach((a) => {
         const href = a.getAttribute("href");
         if (href.includes(currentPath) && currentPath !== "") {
           a.classList.add("font-medium", "underline", "text-white");
@@ -1315,7 +1317,7 @@
       const modalImage = document.getElementById("modal-image");
       const galleryImages = document.querySelectorAll(".gallery-image");
 
-      galleryImages.forEach(img => {
+      galleryImages.forEach((img) => {
         img.addEventListener("click", () => {
           modal.classList.remove("hidden");
           modalImage.src = img.src;
@@ -1327,7 +1329,7 @@
         modalImage.src = "";
       }
 
-      modal.addEventListener("click", e => {
+      modal.addEventListener("click", (e) => {
         if (e.target === modal) closeModal();
       });
 
@@ -1335,13 +1337,13 @@
       const tabButtons = document.querySelectorAll(".tab-btn");
       const tabContents = document.querySelectorAll(".tab-content");
 
-      tabButtons.forEach(btn => {
+      tabButtons.forEach((btn) => {
         btn.addEventListener("click", () => {
-          tabButtons.forEach(b => b.classList.remove("tab-active"));
+          tabButtons.forEach((b) => b.classList.remove("tab-active"));
           btn.classList.add("tab-active");
 
           const tabId = btn.getAttribute("data-tab");
-          tabContents.forEach(tab => {
+          tabContents.forEach((tab) => {
             tab.classList.remove("active");
             if (tab.id === tabId) tab.classList.add("active");
           });
@@ -1357,7 +1359,7 @@
       const form = document.getElementById("download-form");
 
       // Open modal
-      openModalBtn.addEventListener("click", e => {
+      openModalBtn.addEventListener("click", (e) => {
         e.preventDefault();
         modalB.classList.remove("hidden");
       });
@@ -1368,7 +1370,7 @@
       });
 
       // Handle form submit
-      form.addEventListener("submit", e => {
+      form.addEventListener("submit", (e) => {
         e.preventDefault();
 
         // You can validate / send form data here using AJAX if needed
