@@ -3,14 +3,67 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tara Devi’s Enclave</title>
-    <link rel="icon" href="../../Assets/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/Assets/favicon.ico" type="image/x-icon" />
 
     <link rel="stylesheet" href="/styles/modal-handler.css" />
     <link rel="stylesheet" href="/styles/loader.css" />
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Meta Tags for SEO -->
+    <title>
+      Buy Luxury 3 BHK Apartments in Shimla | Tara Devi's Enclave Phase 1
+    </title>
+
+    <meta
+      name="description"
+      content="Buy 3 BHK apartments in New Shimla at Tara Devi's Enclave. Enjoy serene surroundings, modern facilities, and stunning views of the Himalayas."
+    />
+
+    <meta
+      name="keywords"
+      content="3 BHK apartment in Shimla, 3 BHK flats in Shimla, buy 3 BHK flat in Shimla, luxury 3 BHK apartment Shimla, 3 BHK home in Shimla, buy 3 BHK apartment in Shimla, 3 BHK residential project Shimla, affordable 3 BHK flats in Shimla, Buy 3 BHK in Shimla, best 3 BHK property in Shimla, real estate Shimla, scenic view apartment Shimla, flats for sale in Shimla, affordable 3 BHK Shimla"
+    />
+
+    <link rel="canonical" href="https://taradevis.in/threebhkapartments" />
+    <meta name="rating" content="safe for kids" />
+    <meta name="revisit-after" content="daily" />
+    <meta name="distribution" content="global" />
+    <meta name="expires" content="never" />
+    <meta name="geo.placename" content="Shimla, India" />
+    <meta name="copyright" content="©️ July 2025" />
+    <meta name="author" content="Tara Devi's Enclave Phase-1" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "3 BHK Luxury Apartments in Shimla by Tara Devi's Enclave Phase 1, Shimla, Himachal Pradesh",
+        "image": "https://taradevis.in/Assets/hero-image.jpg",
+        "description": "Discover luxurious 3 BHK apartments at Tara Devi's Enclave in Shimla. Experience elegant living with premium amenities, panoramic hill views, and a peaceful lifestyle in the heart of the Himalayas.",
+        "category": "Residential Projects",
+        "brand": {
+          "@type": "Brand",
+          "name": "Tara Devi's Enclave Phase -1",
+          "logo": "https://taradevis.in/Assets/Logo.png"
+        },
+        "offers": {
+          "@type": "AggregateOffer",
+          "url": "https://taradevis.in/threebhkapartments",
+          "priceCurrency": "INR",
+          "lowPrice": "14000000",
+          "highPrice": "14500000",
+          "offerCount": "39881"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5",
+          "bestRating": "5",
+          "worstRating": "1",
+          "ratingCount": "7133"
+        }
+      }
+    </script>
 
     <!-- Google Fonts -->
     <link
@@ -1365,7 +1418,7 @@
     <script type="module" src="../../js/form-handlers.js"></script>
 
     <script>
-      document.querySelectorAll('input[type="tel"]').forEach((phoneNode) => {
+      document.querySelectorAll('input[type="tel"]').forEach(phoneNode => {
         const phoneInput = window.intlTelInput(phoneNode, {
           initialCountry: "in", // Set default to India
           preferredCountries: ["in", "us", "gb"], // Preferred options on top
@@ -1381,7 +1434,7 @@
       const currentPath = window.location.pathname.split("/").pop();
       const anchors = document.querySelectorAll(".nav-link");
 
-      anchors.forEach((a) => {
+      anchors.forEach(a => {
         const href = a.getAttribute("href");
         if (href.includes(currentPath) && currentPath !== "") {
           a.classList.add("font-medium", "underline", "text-white");
@@ -1555,15 +1608,13 @@
         const tabButtons = document.querySelectorAll(".tab-btn");
         const tabContents = document.querySelectorAll(".tab-content");
 
-        tabButtons.forEach((button) => {
+        tabButtons.forEach(button => {
           button.addEventListener("click", function () {
             const tabId = this.getAttribute("data-tab");
 
             // Remove active class from all buttons and content
-            tabButtons.forEach((btn) => btn.classList.remove("tab-active"));
-            tabContents.forEach((content) =>
-              content.classList.remove("active")
-            );
+            tabButtons.forEach(btn => btn.classList.remove("tab-active"));
+            tabContents.forEach(content => content.classList.remove("active"));
 
             // Add active class to current button and content
             this.classList.add("tab-active");
@@ -1576,7 +1627,7 @@
       const modalImage = document.getElementById("modal-image");
       const galleryImages = document.querySelectorAll(".gallery-image");
 
-      galleryImages.forEach((img) => {
+      galleryImages.forEach(img => {
         img.addEventListener("click", () => {
           modal.classList.remove("hidden");
           modalImage.src = img.src;
@@ -1588,20 +1639,20 @@
         modalImage.src = "";
       }
 
-      modal.addEventListener("click", (e) => {
+      modal.addEventListener("click", e => {
         if (e.target === modal) closeModal();
       });
 
       // Optional: Tab functionality
-      document.querySelectorAll(".tab-btn").forEach((btn) => {
+      document.querySelectorAll(".tab-btn").forEach(btn => {
         btn.addEventListener("click", () => {
           document
             .querySelectorAll(".tab-btn")
-            .forEach((b) => b.classList.remove("tab-active"));
+            .forEach(b => b.classList.remove("tab-active"));
           btn.classList.add("tab-active");
 
           const target = btn.dataset.tab;
-          document.querySelectorAll(".tab-content").forEach((tc) => {
+          document.querySelectorAll(".tab-content").forEach(tc => {
             tc.classList.remove("active");
             tc.classList.add("hidden");
           });
@@ -1629,7 +1680,7 @@
 
       const contactForm = document.getElementById("contactForm");
 
-      contactForm.addEventListener("submit", async (e) => {
+      contactForm.addEventListener("submit", async e => {
         e.preventDefault();
 
         const firstName = document.getElementById("firstName").value.trim();
@@ -1678,7 +1729,7 @@
 
       const downloadForm = document.getElementById("download-form");
 
-      downloadForm.addEventListener("submit", async (e) => {
+      downloadForm.addEventListener("submit", async e => {
         e.preventDefault();
 
         const countryCode = downloadForm
@@ -1737,7 +1788,7 @@
       const form = document.getElementById("download-form");
 
       // Open modal
-      openModalBtn.addEventListener("click", (e) => {
+      openModalBtn.addEventListener("click", e => {
         e.preventDefault();
         modalB.classList.remove("hidden");
       });
@@ -1748,7 +1799,7 @@
       });
 
       // Handle form submit
-      form.addEventListener("submit", (e) => {
+      form.addEventListener("submit", e => {
         e.preventDefault();
 
         // You can validate / send form data here using AJAX if needed
