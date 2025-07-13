@@ -45,6 +45,21 @@
     />
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-TV8Z0X38JM"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-TV8Z0X38JM");
+    </script>
+
     <!-- Custom Styles and Animations -->
     <style>
       /* Font Family */
@@ -1483,7 +1498,7 @@
     <script type="module" src="../js/form-handlers.js"></script>
 
     <script>
-      document.querySelectorAll('input[type="tel"]').forEach((phoneNode) => {
+      document.querySelectorAll('input[type="tel"]').forEach(phoneNode => {
         const phoneInput = window.intlTelInput(phoneNode, {
           initialCountry: "in", // Set default to India
           preferredCountries: ["in", "us", "gb"], // Preferred options on top
@@ -1499,7 +1514,7 @@
       const currentPath = window.location.pathname.split("/").pop();
       const anchors = document.querySelectorAll(".nav-link");
 
-      anchors.forEach((a) => {
+      anchors.forEach(a => {
         const href = a.getAttribute("href");
         if (href.includes(currentPath) && currentPath !== "") {
           a.classList.add("font-medium", "underline", "text-white");
@@ -1730,15 +1745,13 @@
         const tabButtons = document.querySelectorAll(".tab-btn");
         const tabContents = document.querySelectorAll(".tab-content");
 
-        tabButtons.forEach((button) => {
+        tabButtons.forEach(button => {
           button.addEventListener("click", function () {
             const tabId = this.getAttribute("data-tab");
 
             // Remove active class from all buttons and content
-            tabButtons.forEach((btn) => btn.classList.remove("tab-active"));
-            tabContents.forEach((content) =>
-              content.classList.remove("active")
-            );
+            tabButtons.forEach(btn => btn.classList.remove("tab-active"));
+            tabContents.forEach(content => content.classList.remove("active"));
 
             // Add active class to current button and content
             this.classList.add("tab-active");
@@ -1751,7 +1764,7 @@
       const modalImage = document.getElementById("modal-image");
       const galleryImages = document.querySelectorAll(".gallery-image");
 
-      galleryImages.forEach((img) => {
+      galleryImages.forEach(img => {
         img.addEventListener("click", () => {
           modal.classList.remove("hidden");
           modalImage.src = img.src;
@@ -1763,20 +1776,20 @@
         modalImage.src = "";
       }
 
-      modal.addEventListener("click", (e) => {
+      modal.addEventListener("click", e => {
         if (e.target === modal) closeModal();
       });
 
       // Optional: Tab functionality
-      document.querySelectorAll(".tab-btn").forEach((btn) => {
+      document.querySelectorAll(".tab-btn").forEach(btn => {
         btn.addEventListener("click", () => {
           document
             .querySelectorAll(".tab-btn")
-            .forEach((b) => b.classList.remove("tab-active"));
+            .forEach(b => b.classList.remove("tab-active"));
           btn.classList.add("tab-active");
 
           const target = btn.dataset.tab;
-          document.querySelectorAll(".tab-content").forEach((tc) => {
+          document.querySelectorAll(".tab-content").forEach(tc => {
             tc.classList.remove("active");
             tc.classList.add("hidden");
           });
@@ -1804,7 +1817,7 @@
 
       const contactForm = document.getElementById("contactForm");
 
-      contactForm.addEventListener("submit", async (e) => {
+      contactForm.addEventListener("submit", async e => {
         e.preventDefault();
 
         const firstName = document.getElementById("firstName").value.trim();
@@ -1853,7 +1866,7 @@
 
       const downloadForm = document.getElementById("download-form");
 
-      downloadForm.addEventListener("submit", async (e) => {
+      downloadForm.addEventListener("submit", async e => {
         e.preventDefault();
 
         const countryCode = downloadForm
@@ -1966,7 +1979,7 @@
         .addEventListener("click", closeMobileMenu);
 
       // Close when clicking any menu link
-      document.querySelectorAll(".mobile-link").forEach((link) => {
+      document.querySelectorAll(".mobile-link").forEach(link => {
         link.addEventListener("click", closeMobileMenu);
       });
 
@@ -1976,7 +1989,7 @@
       const form = document.getElementById("download-form");
 
       // Open modal
-      openModalBtn.addEventListener("click", (e) => {
+      openModalBtn.addEventListener("click", e => {
         e.preventDefault();
         modalB.classList.remove("hidden");
       });
@@ -1987,7 +2000,7 @@
       });
 
       // Handle form submit
-      form.addEventListener("submit", (e) => {
+      form.addEventListener("submit", e => {
         e.preventDefault();
 
         // You can validate / send form data here using AJAX if needed
