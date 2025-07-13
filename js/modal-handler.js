@@ -10,7 +10,7 @@ const FOCUSABLE = `
 `;
 
 // Internal helper
-const handleKeyPress = (modal, onClose, focus = "trap") => {
+const handleKeyPress = (modal, focus = "trap") => {
   const focusableElements = modal.querySelectorAll(FOCUSABLE);
   const first = focusableElements[0];
   const last = focusableElements[focusableElements.length - 1];
@@ -18,8 +18,6 @@ const handleKeyPress = (modal, onClose, focus = "trap") => {
   first.focus(); // Initial focus
 
   modal.onkeydown = e => {
-    if (e.key === "Escape") onClose(modal);
-
     if (focus === "trap" && e.key === "Tab") {
       if (e.shiftKey && document.activeElement === first) {
         e.preventDefault();
@@ -49,7 +47,7 @@ function modalHandler(modal, onOpen, onClose) {
 
   const showModal = () => {
     onOpen(modal);
-    handleKeyPress(modal, onClose);
+    handleKeyPress(modal);
 
     // Mark as shown
     sessionStorage.setItem("first_visit", "done");
@@ -64,10 +62,6 @@ function modalHandler(modal, onOpen, onClose) {
   if (closeBtn) {
     closeBtn.onclick = () => onClose(modal);
   }
-
-  modal.onclick = e => {
-    if (e.target === modal) onClose(modal);
-  };
 }
 
 onload = () => {
