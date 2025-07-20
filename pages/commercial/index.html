@@ -818,7 +818,7 @@
 
     <!-- JavaScript -->
     <script>
-      document.querySelectorAll('input[type="tel"]').forEach((phoneNode) => {
+      document.querySelectorAll('input[type="tel"]').forEach(phoneNode => {
         const phoneInput = window.intlTelInput(phoneNode, {
           initialCountry: "in", // Set default to India
           preferredCountries: ["in", "us", "gb"], // Preferred options on top
@@ -858,7 +858,7 @@
           entries,
           observer
         ) {
-          entries.forEach((entry) => {
+          entries.forEach(entry => {
             if (!entry.isIntersecting) return;
 
             entry.target.classList.add("appear");
@@ -872,7 +872,7 @@
           entries,
           observer
         ) {
-          entries.forEach((entry) => {
+          entries.forEach(entry => {
             if (!entry.isIntersecting) return;
 
             entry.target.classList.add("appear");
@@ -882,11 +882,11 @@
         observerOptions);
 
         // Apply observers to elements
-        fadeElems.forEach((elem) => {
+        fadeElems.forEach(elem => {
           fadeObserver.observe(elem);
         });
 
-        slideElems.forEach((elem) => {
+        slideElems.forEach(elem => {
           slideObserver.observe(elem);
         });
 
@@ -894,15 +894,13 @@
         const tabButtons = document.querySelectorAll(".tab-btn");
         const tabContents = document.querySelectorAll(".tab-content");
 
-        tabButtons.forEach((button) => {
+        tabButtons.forEach(button => {
           button.addEventListener("click", function () {
             const tabId = this.getAttribute("data-tab");
 
             // Remove active class from all buttons and content
-            tabButtons.forEach((btn) => btn.classList.remove("tab-active"));
-            tabContents.forEach((content) =>
-              content.classList.remove("active")
-            );
+            tabButtons.forEach(btn => btn.classList.remove("tab-active"));
+            tabContents.forEach(content => content.classList.remove("active"));
 
             // Add active class to current button and content
             this.classList.add("tab-active");
@@ -915,7 +913,7 @@
       const currentPath = window.location.pathname.split("/").pop();
       const anchors = document.querySelectorAll(".nav-link");
 
-      anchors.forEach((a) => {
+      anchors.forEach(a => {
         const href = a.getAttribute("href");
         if (href.includes(currentPath) && currentPath !== "") {
           a.classList.add("font-medium", "underline", "text-white");
@@ -941,8 +939,8 @@
       }
 
       const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
+        entries => {
+          entries.forEach(entry => {
             if (entry.isIntersecting) {
               entry.target.classList.add("opacity-100", "translate-y-0");
             }
@@ -953,13 +951,13 @@
         }
       );
 
-      document.querySelectorAll(".animate-on-scroll").forEach((el) => {
+      document.querySelectorAll(".animate-on-scroll").forEach(el => {
         observer.observe(el);
       });
 
       const contactForm = document.getElementById("contactForm");
 
-      contactForm.addEventListener("submit", async (e) => {
+      contactForm.addEventListener("submit", async e => {
         e.preventDefault();
 
         const firstName = document.getElementById("firstName").value.trim();
@@ -995,7 +993,7 @@
           );
 
           if (response.ok) {
-            window.location.href = "thankyou.html";
+            window.location.href = "/thankyou.html";
             contactForm.reset();
           } else {
             alert("There was an error sending your message.");
@@ -1008,7 +1006,7 @@
 
       const downloadForm = document.getElementById("download-form");
 
-      downloadForm.addEventListener("submit", async (e) => {
+      downloadForm.addEventListener("submit", async e => {
         e.preventDefault();
 
         const countryCode = downloadForm
@@ -1051,7 +1049,7 @@
           );
 
           if (response.ok) {
-            window.location.href = "thankyou.html";
+            window.location.href = "/thankyou.html";
             downloadForm.reset();
           } else {
             alert("Error while downloading the brochure");
@@ -1068,7 +1066,7 @@
       const form = document.getElementById("download-form");
 
       // Open modal
-      openModalBtn.addEventListener("click", (e) => {
+      openModalBtn.addEventListener("click", e => {
         e.preventDefault();
         modalB.classList.remove("hidden");
       });
@@ -1079,7 +1077,7 @@
       });
 
       // Handle form submit
-      form.addEventListener("submit", (e) => {
+      form.addEventListener("submit", e => {
         e.preventDefault();
 
         // You can validate / send form data here using AJAX if needed
